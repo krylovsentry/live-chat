@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor="let message of messageList">
+  <div *ngFor="let message of messageList$ | async">
     {{message.message}}
   </div>
   <input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()"/>
